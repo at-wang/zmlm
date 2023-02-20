@@ -3,7 +3,7 @@
 <!--    <div class="header1">
       <img src="../image/tu1.png">
     </div>-->
-    <div @click="test" class="header-span">
+    <div @click="test" class="header-span2" style="margin-left: 37%">
       发现
     </div>
     <div class="header-span2" @mouseenter="state.show=true" @mouseleave="state.show=false" >
@@ -20,7 +20,7 @@
     </div>
     <div class="header-avatal">
       <router-link to="/userRecord">
-        <el-avatar style="margin-top: 5%" shape="square" :size="50" src="https://blog.csdn.net/weixin_60566467?spm=1001.2101.3001.5343" />
+        <el-avatar style="margin-top: 5%" shape="square" :size="50" src="https://profile.csdnimg.cn/9/3/A/0_weixin_60566467" />
       </router-link>
 
     </div>
