@@ -1,8 +1,6 @@
 <template>
-
-
   <el-timeline style="margin-top: 40px">
-    <el-timeline-item center type="primary" timestamp="今天" color="hsl" placement="top">
+    <el-timeline-item v-for="data of 10" type="primary" timestamp="今天" placement="top">
       <div class="user-record-hear-card">
         <!--左边-->
         <div class="user-record-hear-card-left">
@@ -14,27 +12,22 @@
         <!--右边-->
         <div class="user-record-hear-card-right">
           <div style="height: 40px;padding-top: 20px">
-            <span style="font-size: 15px;float: left;">第35集 里筷子</span>
-            <span style="font-size: 10px;float: right;margin-right: 20%;color: #a3a3ac">6小时前</span>
+<!--            <span style="font-size: 15px;float: left;" class="right-span">第35集 里筷子</span>-->
+            <span  class="right-span">第35集 里筷子</span>
+            <span  class="right-span2">6小时前</span>
+<!--            <span style="font-size: 10px;float: right;margin-right: 20%;color: #a3a3ac" class="right-span2">6小时前</span>-->
           </div>
           <div style="height: 40px">
-            <span style="font-size: 13px;float: left;color: #72727b">13路末班车I又名惊魂夜车|惊悚恐怖灵异悬疑|精品探案力作|有声剧</span>
+<!--            <span style="font-size: 13px;float: left;color: #72727b" class="right-span3">13路末班车I又名惊魂夜车|惊悚恐怖灵异悬疑|精品探案力作|有声剧</span>-->
+            <span  class="right-span3">13路末班车I又名惊魂夜车|惊悚恐怖灵异悬疑|精品探案力作|有声剧</span>
           </div>
-
+          <div style="height: 40px">
+<!--            <span style="font-size: 13px;float: left;color: #a3a3ac" class="right-span4">也推磨先生</span>-->
+            <span class="right-span4">也推磨先生</span>
+            <span style="font-size: 13px;float: left;color: #a3a3ac;margin-left: 10%">20:17</span>
+          </div>
         </div>
       </div>
-    </el-timeline-item>
-    <el-timeline-item timestamp="2018/4/3" placement="top">
-      <el-card>
-        <h4>Update Github template</h4>
-        <p>Tom committed 2018/4/3 20:46</p>
-      </el-card>
-    </el-timeline-item>
-    <el-timeline-item center timestamp="2018/4/2" placement="top">
-      Event start
-    </el-timeline-item>
-    <el-timeline-item timestamp="2018/4/2" placement="top">
-      Event end
     </el-timeline-item>
   </el-timeline>
 
@@ -58,13 +51,14 @@ onMounted(() => {
   width: 100%;
   height: 140px;
   background-color: #1baeae;
+  cursor: pointer;
 }
 
 .user-record-hear-card-left {
   float: left;
   width: 18%;
   height: 140px;
-  background-color: #666666;
+
   position: relative;
 }
 
@@ -72,6 +66,7 @@ onMounted(() => {
   width: 100%;
   height: 140px;
   background-color: #ffffff;
+
 }
 
 .user-record-hear-card-img {
@@ -85,6 +80,36 @@ onMounted(() => {
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+.right-span:hover {
+  color: #8c222c;
+}
+
+.right-span {
+  font-size: 15px;
+  float: left;
+}
+.right-span2 {
+  font-size: 10px;float: right;margin-right: 20%;color: #a3a3ac
+}
+.right-span3 {
+  font-size: 13px;float: left;color: #72727b
+}
+.right-span4 {
+  font-size: 13px;float: left;color: #a3a3ac
+}
+
+.right-span2:hover {
+  color: #8c222c;
+}
+
+.right-span3:hover {
+  color: #8c222c;
+}
+
+.right-span4:hover {
+  color: #8c222c;
 }
 
 </style>
