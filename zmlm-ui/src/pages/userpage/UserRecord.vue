@@ -31,7 +31,7 @@
       <user-record-hear/>
     </template><!--已购-->
     <template v-if="!state.style.headTitleShow3">
-      <UserRecordSubscribe/>
+      <user-record-purchase/>
     </template><!--喜欢-->
     <template v-if="!state.style.headTitleShow4">
       <UserRecordSubscribe/>
@@ -46,6 +46,7 @@
 import {onMounted, reactive} from "vue";
 import UserRecordSubscribe from "./UserRecordSubscribe.vue";
 import UserRecordHear from "./UserRecordHear.vue";
+import UserRecordPurchase from "./UserRecordPurchase.vue";
 
 
 const state = reactive({
@@ -101,7 +102,6 @@ onMounted(() => {
   height: auto;
   min-height: 400px;
   margin-left: 20%;
-
 }
 
 .user-record-head {

@@ -1,16 +1,16 @@
 <template>
   <el-timeline style="margin-top: 40px">
     <el-timeline-item v-for="data of 10" type="primary" timestamp="今天" placement="top">
-      <div class="user-record-hear-card">
+      <div class="user-record-hear-card" >
         <!--左边-->
-        <div class="user-record-hear-card-left">
+        <div class="user-record-hear-card-left" >
           <div class="user-record-hear-card-img">
             <el-avatar style="margin-top: 15%;margin-left: 15%" :size="70"
                        src="https://profile.csdnimg.cn/9/3/A/0_weixin_60566467"/>
           </div>
         </div>
         <!--右边-->
-        <div class="user-record-hear-card-right">
+        <div class="user-record-hear-card-right" >
           <div style="height: 40px;padding-top: 20px">
 <!--            <span style="font-size: 15px;float: left;" class="right-span">第35集 里筷子</span>-->
             <span  class="right-span">第35集 里筷子</span>
@@ -25,6 +25,7 @@
 <!--            <span style="font-size: 13px;float: left;color: #a3a3ac" class="right-span4">也推磨先生</span>-->
             <span class="right-span4">也推磨先生</span>
             <span style="font-size: 13px;float: left;color: #a3a3ac;margin-left: 10%">20:17</span>
+            <el-button size="small" style="float: left;margin-left: 20%" v-show="!state.buttonWhetherShow" >删除</el-button>
           </div>
         </div>
       </div>
@@ -37,7 +38,9 @@
 import {onMounted, reactive} from "vue";
 
 
-const state = reactive({})
+const state = reactive({
+  buttonWhetherShow:false
+})
 const test = (e) => {
 
 }
