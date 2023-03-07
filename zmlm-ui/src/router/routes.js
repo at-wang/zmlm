@@ -3,6 +3,7 @@ import test from "../components/test.vue";
 import UserRecord from "../pages/userpage/UserRecord.vue";
 import UserRecordSubscribe from "../pages/userpage/UserRecordSubscribe.vue";
 import UserHomePage from "../pages/userpage/UserHomePage.vue";
+import UserMessage from "../pages/userpage/UserMessage.vue";
 
 const routes = [
 
@@ -20,6 +21,12 @@ const routes = [
         name: '用户主页',
         path: '/userHomePage',
         component: UserHomePage
+    },
+
+    {
+        name: '用户消息',
+        path: '/userMessage',
+        component: UserMessage
     },
 
 ];

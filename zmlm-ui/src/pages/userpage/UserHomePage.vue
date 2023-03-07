@@ -2,11 +2,15 @@
   <div>
     <div class="user-home-page-head">
       <div style="position: absolute">
-        <el-avatar class="avatar" style="margin-top: 150px;margin-left: 350px;transition: 1s" :size="100" src="https://profile.csdnimg.cn/9/3/A/0_weixin_60566467" />
+        <el-avatar class="avatar" style="margin-top: 180px;margin-left: 350px;transition: 1s" :size="110"
+                   src="https://profile.csdnimg.cn/9/3/A/0_weixin_60566467"/>
       </div>
-      <div style="position: absolute;margin-top: 180px;margin-left: 480px;">
+      <div style="position: absolute;margin-top: 190px;margin-left: 480px;">
         <span style="font-size: 25px">人之托</span>
         <span class="user-home-page-head-img"></span>
+      </div>
+      <div style="position: absolute;margin-top: 245px;margin-left: 480px;">
+        <span style="font-size: 17px;color: #ffffff">不疾不徐，一切可期。群663883215</span>
       </div>
     </div>
     <div style="margin-left: 350px">
@@ -43,19 +47,28 @@
         </div>
       </div>
       <!--订阅-->
-<!--      <template v-if="!state.style.headTitleShow1">
-        <UserRecordSubscribe/>
+      <template v-if="!state.style.headTitleShow1">
+        <user-home-page-subscribe/>
       </template>
-      &lt;!&ndash;听过&ndash;&gt;
+      <!--听过-->
       <template v-if="!state.style.headTitleShow2">
         <user-record-hear/>
-      </template>&lt;!&ndash;已购&ndash;&gt;
+      </template>
+      <!--已购-->
       <template v-if="!state.style.headTitleShow3">
         <user-record-purchase/>
-      </template>&lt;!&ndash;喜欢&ndash;&gt;
+      </template>
+      <!--喜欢-->
       <template v-if="!state.style.headTitleShow4">
         <UserRecordSubscribe/>
-      </template>-->
+      </template>
+      <!--关注-->
+      <template v-if="!state.style.headTitleShow5">
+        <user-home-page-attention/>
+      </template>
+      <div v-if="true">
+        <user-home-page-aside/>
+      </div>
 
     </div>
 
@@ -64,11 +77,14 @@
 
 </template>
 
-<script  setup>
+<script setup>
 import {onMounted, reactive} from "vue";
+import UserHomePageSubscribe from "./UserHomePageSubscribe.vue";
+import UserHomePageAside from "./UserHomePageAside.vue";
+import UserHomePageAttention from "./UserHomePageAttention.vue";
 
 
-const state =reactive({
+const state = reactive({
   style: {
     headTitleShow1: true,
     headTitleShow2: true,
@@ -124,21 +140,21 @@ const changeTitleStyle = (e) => {
     state.style.headTitleShow6 = false;
   }
 }
-onMounted(()=>{
+onMounted(() => {
 
 })
 </script>
 
 <style scoped>
-.user-home-page-head{
-/*  width: 100%;
-  height: 300px;
-  background-color: #85c539;*/
+.user-home-page-head {
+  /*  width: 100%;
+    height: 300px;
+    background-color: #85c539;*/
   background-image: url("../../image/背景.png");
-/*  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
-  position: absolute;*/
+  /*  background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    position: absolute;*/
   z-index: 0;
   left: 0;
   right: 0;
@@ -148,19 +164,20 @@ onMounted(()=>{
   background-position: center center;
   background-position-x: center;
   background-position-y: center;
-  min-width: 1280px
 }
-.avatar:hover{
-  transition: 1s;/* 定义旋转过渡时间 */
-  transform:rotate(180deg);/* 定义旋转的角度 */
+
+.avatar:hover {
+  transition: 1s; /* 定义旋转过渡时间 */
+  transform: rotate(180deg); /* 定义旋转的角度 */
   /* 下面是兼容处理 */
-  -ms-transform:rotate(180deg); /* IE 9 */
+  -ms-transform: rotate(180deg); /* IE 9 */
   cursor: pointer;
-/*  -moz-transform:rotate(-180deg); !* Firefox *!
-  -webkit-transform:rotate(-180deg); !* Safari and Chrome *!
-  -o-transform:rotate(-180deg); !* Opera *!*/
+  /*  -moz-transform:rotate(-180deg); !* Firefox *!
+    -webkit-transform:rotate(-180deg); !* Safari and Chrome *!
+    -o-transform:rotate(-180deg); !* Opera *!*/
 }
-.user-home-page-head-img{
+
+.user-home-page-head-img {
   background-image: url("../../image/vip.png");
   background-size: 20px 20px;
   height: 20px;
@@ -168,6 +185,7 @@ onMounted(()=>{
   display: inline-block;
   margin-left: 3px;
 }
+
 .user-record-head-title {
   height: 50px;
   text-align: center;
