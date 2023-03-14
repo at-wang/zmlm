@@ -29,8 +29,6 @@ import java.io.IOException;
 public class AuthUserController {
 
 
-
-
     @RequestMapping("/login")
     public void renderAuth(HttpServletResponse response) throws IOException {
         AuthRequest authRequest = getAuthRequest();
@@ -40,7 +38,6 @@ public class AuthUserController {
     @RequestMapping("/authLogin")
     public Object authLogin(AuthCallback callback) {
         AuthRequest authRequest = getAuthRequest();
-
         AuthResponse login = authRequest.login(callback);
         return login;
     }

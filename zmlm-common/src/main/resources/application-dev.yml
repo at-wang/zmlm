@@ -1,0 +1,19 @@
+server:
+  port: 8083
+  servlet:
+    context-path: /core
+spring:
+  rabbitmq:
+    host: 192.168.46.130
+    port: 5672
+    username: admin
+    password: admin
+#    virtualHost: /kavito
+    template:
+      retry:
+        enabled: true
+        initial-interval: 10000ms
+        max-interval: 300000ms
+        multiplier: 2 #
+      exchange: topic.exchange #默认交换机
+    publisher-returns: true #生产者确认机制，确保消息会正确发送，如果发送失败会有错误回执，从而触发重试

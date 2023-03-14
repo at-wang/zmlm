@@ -4,6 +4,7 @@ import UserRecord from "../pages/userpage/UserRecord.vue";
 import UserRecordSubscribe from "../pages/userpage/UserRecordSubscribe.vue";
 import UserHomePage from "../pages/userpage/UserHomePage.vue";
 import UserMessage from "../pages/userpage/UserMessage.vue";
+import UserMessageBody from "../pages/userpage/UserMessageBody.vue";
 
 const routes = [
 
@@ -27,6 +28,11 @@ const routes = [
         name: '用户消息',
         path: '/userMessage',
         component: UserMessage
+    },
+    {
+        name: '1',
+        path: '/test',
+        component: UserMessageBody
     },
 
 ];
